@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sunrise Systems AI-powered Web Developer interview demo.">
+  <title>Sunrise Systems | AI Web Developer Interview</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Vapi HTML Web SDK -->
+  <script>
+    var vapiInstance = null;
+
+    const assistant = "87bec83b-52a6-4acd-a303-94a01b7e2939";
+    const apiKey = "9d913e3c-7799-4a8b-8569-0c53cf73dee4";
+
+    const buttonConfig = {
+      position: "bottom-right",
+      offset: "24px",
+      width: "50px",
+      height: "50px",
+      idle: {
+        color: "rgb(67, 230, 163)",
+        type: "pill",
+        title: "Start AI Interview",
+        subtitle: "Voice Interview",
+        icon: "https://unpkg.com/lucide-static@latest/icons/mic.svg"
+      },
+      loading: {
+        color: "rgb(86, 168, 255)",
+        type: "pill",
+        title: "Connecting...",
+        subtitle: "Please wait",
+        icon: "https://unpkg.com/lucide-static@latest/icons/loader-2.svg"
+      },
+      active: {
+        color: "rgb(255, 92, 92)",
+        type: "pill",
+        title: "End Interview",
+        subtitle: "Click to stop",
+        icon: "https://unpkg.com/lucide-static@latest/icons/phone-off.svg"
+      }
+    };
+
+    (function (d, t) {
+      var g = document.createElement(t);
+      var s = d.getElementsByTagName(t)[0];
+
+      g.src =
+        "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+
+      g.defer = true;
+      g.async = true;
+
+      s.parentNode.insertBefore(g, s);
+
+      g.onload = function () {
+        vapiInstance = window.vapiSDK.run({
+          apiKey: apiKey,
+          assistant: assistant,
+          config: buttonConfig
+        });
+
+        window.dispatchEvent(new Event("vapi-ready"));
+      };
+    })(document, "script");
+  </script>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark">S</span>
+        <span>Sunrise Systems</span>
+      </a>
+      <span class="demo-badge">AI Recruiting Demo</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">VOICE-POWERED TECHNICAL SCREENING</div>
+          <h1>Web Developer<br><span>AI Interviewer</span></h1>
+
+          <p class="hero-text">
+            A conversational screening experience designed to help recruiters
+            conduct consistent first-round technical interviews and capture
+            structured candidate responses.
+          </p>
+
+          <div class="hero-actions">
+            <!-- THIS BUTTON NOW STARTS THE VAPI CALL -->
+            <button class="primary-btn" id="startInterview" type="button">
+              Start AI Interview <span>→</span>
+            </button>
+
+            <a class="secondary-btn" href="#details">View Role Details</a>
+          </div>
+
+          <p class="button-status" id="buttonStatus">
+            Click “Start AI Interview” to begin the voice screening.
+          </p>
+
+          <div class="trust-row">
+            <div><strong>6 Months</strong><span>Contract</span></div>
+            <div><strong>Remote</strong><span>Work Setup</span></div>
+            <div><strong>Global</strong><span>Web Role</span></div>
+          </div>
+        </div>
+
+        <div class="interview-card" id="interview">
+          <div class="card-top">
+            <div>
+              <span class="live-dot"></span>
+              <span>AI Interviewer</span>
+            </div>
+            <span class="secure-label">VOICE</span>
+          </div>
+
+          <div class="avatar">
+            <div class="avatar-ring">AI</div>
+          </div>
+
+          <h2>Ready to begin?</h2>
+          <p>
+            Start the live voice interview using the button on this page or
+            the floating Vapi control.
+          </p>
+
+          <div class="interview-points">
+            <div><span>✓</span> Technical experience</div>
+            <div><span>✓</span> Adobe AEM / EDS</div>
+            <div><span>✓</span> HTML, CSS & CMS</div>
+            <div><span>✓</span> QA & debugging</div>
+          </div>
+
+          <div class="card-note">
+            <strong>Tip:</strong> Allow microphone access when your browser asks.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="details">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">SCREENING FRAMEWORK</div>
+          <h2>What the AI interviewer covers</h2>
+          <p>
+            The interview is configured around the Web Developer, Global
+            Website role and focuses on practical recruiting questions.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="icon">01</div>
+            <h3>Technical Skills</h3>
+            <p>Web development, HTML/CSS, reusable components and troubleshooting.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="icon">02</div>
+            <h3>AEM / CMS</h3>
+            <p>Adobe AEM, EDS, CMS workflows and content publishing.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="icon">03</div>
+            <h3>Project Delivery</h3>
+            <p>Campaign launches, timelines, dependencies and stakeholder communication.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="icon">04</div>
+            <h3>QA & Collaboration</h3>
+            <p>Cross-browser testing, debugging, SEO, translation and global teams.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section">
+      <div class="container role-grid">
+        <div>
+          <div class="eyebrow">ROLE SNAPSHOT</div>
+          <h2>Developer, Web, Global Website N02</h2>
+          <p>
+            A remote contract role focused on global website delivery,
+            product launches, reusable web components and content publishing.
+          </p>
+        </div>
+
+        <div class="role-list">
+          <div><span>Location</span><strong>Waltham, MA · Remote</strong></div>
+          <div><span>Duration</span><strong>6 Months</strong></div>
+          <div><span>Core Platform</span><strong>Adobe AEM / EDS</strong></div>
+          <div><span>Experience</span><strong>4–6 Years</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta">
+        <div>
+          <div class="eyebrow">LIVE DEMO</div>
+          <h2>Experience the screening flow</h2>
+          <p>Start a sample first-round technical interview by voice.</p>
+        </div>
+        <button class="primary-btn" id="startInterviewBottom" type="button">
+          Launch Interview <span>→</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>AI Recruiting Demo</span>
+      <span>© <span id="year"></span> Demo Experience</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
